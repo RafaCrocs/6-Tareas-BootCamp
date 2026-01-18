@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization.Metadata;
 
 namespace Practicas
 {
@@ -7,7 +8,7 @@ namespace Practicas
         static void Main(string[] args)
         {
             int opcion = 0;
-            while (opcion != 6)
+            while (opcion != 7)
             {
 
                 Console.WriteLine("Seleccione un ejercicio:\n ");
@@ -16,7 +17,8 @@ namespace Practicas
                 Console.WriteLine("3. Palindromo");
                 Console.WriteLine("4. Suma de numeros hasta N");
                 Console.WriteLine("5. Tablas de multiplicar hasta 10");
-                Console.WriteLine("6. Conteo de vocales\n");
+                Console.WriteLine("6. Conteo de vocales");
+                Console.WriteLine("7. Salir\n");
 
 
 
@@ -42,6 +44,9 @@ namespace Practicas
                         break;
                     case 6:
                         Vocales();
+                        break;
+                    case 7:
+                        Console.WriteLine("Saliendo...");
                         break;
                     default:
                         break;
@@ -186,6 +191,34 @@ namespace Practicas
         }
         public static void Vocales()
         {
+            Console.WriteLine("---------------");
+            Console.WriteLine("Conteo de Vocales");
+            Console.WriteLine("---------------\n");
+
+            Console.WriteLine("Ingrese un texto: ");
+            string texto = Console.ReadLine().ToLower();
+
+            
+
+            int a = 0, e = 0, i = 0, o = 0, u = 0;
+            int espacios = 0;
+
+
+            for (int j = 0; j < texto.Length; j++)
+            {
+                if (texto[j] == 'a') a++;
+                if (texto[j] == 'e') e++;
+                if (texto[j] == 'i') i++;
+                if (texto[j] == 'o') o++;
+                if (texto[j] == 'u') u++;
+                if (texto[j] == ' ') espacios++;
+            }
+
+            Console.WriteLine($"\nEl total de vocales es: {texto.Length - espacios}");
+            Console.WriteLine($"A: {a}\nE: {e}\nI: {i}\nO: {o}\nU: {u}");
+
+            Console.ReadKey();
+            Console.Clear();
 
         }
     }
