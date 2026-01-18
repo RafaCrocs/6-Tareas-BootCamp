@@ -13,9 +13,10 @@ namespace Practicas
                 Console.WriteLine("Seleccione un ejercicio:\n ");
                 Console.WriteLine("1. Figonacci");
                 Console.WriteLine("2. Numeros Primos");
-                Console.WriteLine("3. Suma de numeros hasta N");
-                Console.WriteLine("4. Tablas de multiplicar hasta 10");
-                Console.WriteLine("5. Conteo de vocales\n");
+                Console.WriteLine("3. Palindromo");
+                Console.WriteLine("4. Suma de numeros hasta N");
+                Console.WriteLine("5. Tablas de multiplicar hasta 10");
+                Console.WriteLine("6. Conteo de vocales\n");
 
 
 
@@ -31,12 +32,15 @@ namespace Practicas
                         NumerosPrimos();
                         break;
                     case 3:
-                        SumaNumeros();
+                        Palindromo();
                         break;
                     case 4:
-                        Tablas();
+                        SumaNumeros();
                         break;
                     case 5:
+                        Tablas();
+                        break;
+                    case 6:
                         Vocales();
                         break;
                     default:
@@ -108,6 +112,27 @@ namespace Practicas
             }
             Console.ReadKey();
             Console.Clear();
+        }
+        public static void Palindromo()
+        {
+            Console.WriteLine("---------------");
+            Console.WriteLine("Palindromo");
+            Console.WriteLine("---------------\n");
+
+            string texto = Console.ReadLine();
+
+            for (int i = texto.Length; i > 0; i--)
+            {
+                Console.Write(texto[i - 1]);
+            }
+
+            Console.ReadKey();
+            Console.Clear();
+
+
+
+
+
         }
         public static void SumaNumeros()
         {
